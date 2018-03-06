@@ -15,6 +15,5 @@ RUN apk --update add \
    && rm -rf /var/cache/apk/*
 
 RUN curl -L https://github.com/AGWA/git-crypt/archive/debian/$VERSION.tar.gz | tar zxv -C /var/tmp
-RUN cd /var/tmp/git-crypt-debian-$VERSION && make && make install PREFIX=/usr/local
-
-CMD ["/bin/bash git-crypt version && java -version && gradle -v"]
+RUN cd /var/tmp/git-crypt-debian-$VERSION && make && make install PREFIX=/usr/local && rm -rf /var/tmp/*
+RUN apk del make g++ openssl-dev
