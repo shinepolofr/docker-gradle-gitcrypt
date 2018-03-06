@@ -2,7 +2,7 @@ FROM gradle:jdk8-alpine
 MAINTAINER Baiyuan <bywang.thoughtworks.com>
 
 ENV VERSION 0.5.0-2
-
+USER root
 RUN apk --update add \
    bash \
    curl \
