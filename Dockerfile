@@ -16,4 +16,4 @@ RUN apk --update add \
 
 RUN curl -L https://github.com/AGWA/git-crypt/archive/debian/$VERSION.tar.gz | tar zxv -C /var/tmp
 RUN cd /var/tmp/git-crypt-debian-$VERSION && make && make install PREFIX=/usr/local && rm -rf /var/tmp/*
-RUN apk del make g++ openssl-dev
+RUN apk del make openssl-dev
