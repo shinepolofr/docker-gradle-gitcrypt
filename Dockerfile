@@ -1,7 +1,7 @@
 FROM gradle:jdk8-alpine
 MAINTAINER Baiyuan <bywang.thoughtworks.com>
 
-ENV VERSION 0.6.0
+ENV VERSION 0.6.0-1
 USER root
 RUN apk --update add \
    bash \
