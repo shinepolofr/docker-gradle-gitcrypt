@@ -11,7 +11,6 @@ ENV ANDROID_SDK /opt/android-sdk-linux
 ENV ANDROID_NDK_HOME /opt/android-ndk
 
 # Install Required Tools
-RUN apt-get update -qq
 RUN apk -U update && apk -U add \
   bash \
   ca-certificates \
