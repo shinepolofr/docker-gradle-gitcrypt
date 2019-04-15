@@ -48,7 +48,7 @@ RUN rm -rf /opt/android-ndk-tmp
 # add to PATH
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}  
   
-
+COPY tools /opt/tools
 COPY licenses /opt/licenses
 
 # Working Directory
