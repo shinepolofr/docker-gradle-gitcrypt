@@ -49,7 +49,7 @@ RUN rm -rf /opt/android-ndk-tmp
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}  
   
 
-
+COPY licenses /opt/licenses
 
 # Working Directory
 WORKDIR /opt/android-sdk-linux
