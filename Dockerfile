@@ -40,10 +40,10 @@ RUN mkdir -p /opt/android-sdk-linux \
 RUN mkdir /opt/android-ndk-tmp
 RUN cd /opt/android-ndk-tmp && wget -q http://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip
 # uncompress
-RUN cd /opt/android-ndk-tmp && chmod a+x ../android-ndk-r16b-linux-x86_64.bin
-RUN cd /opt/android-ndk-tmp && ../android-ndk-r6b-linux-x86_64.bin
+RUN cd /opt/android-ndk-tmp && chmod a+x ./android-ndk-r16b-linux-x86_64.bin
+RUN cd /opt/android-ndk-tmp && ./android-ndk-r6b-linux-x86_64.bin
 # move to it's final location
-RUN cd /opt/android-ndk-tmp && mv ../android-ndk-r16b /opt/android-ndk
+RUN cd /opt/android-ndk-tmp && mv ./android-ndk-r16b /opt/android-ndk
 # remove temp dir
 RUN rm -rf /opt/android-ndk-tmp
 # add to PATH
