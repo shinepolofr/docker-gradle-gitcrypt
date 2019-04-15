@@ -49,14 +49,7 @@ RUN rm -rf /opt/android-ndk-tmp
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}  
   
 
-# Copy Tools
-COPY tools /opt/tools
 
-# Copy Licenses
-COPY licenses /opt/licenses
 
 # Working Directory
 WORKDIR /opt/android-sdk-linux
-
-RUN /opt/tools/entrypoint.sh built-in
-CMD /opt/tools/entrypoint.sh built-in
