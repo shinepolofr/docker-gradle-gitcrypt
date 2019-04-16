@@ -8,7 +8,6 @@ ENV ANDROID_SDK_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK /opt/android-sdk-linux
-ENV ANDROID_NDK_HOME /opt/android-ndk
 
 # Install Required Tools
 RUN apk -U update && apk -U add \
@@ -45,11 +44,11 @@ RUN cd /opt/android-ndk-tmp && unzip -q ./android-ndk-r16b-linux-x86_64.zip -d /
 RUN cd /opt/android-ndk && mv ./android-ndk-r16b /opt/android-ndk
 # remove temp dir
 RUN rm -rf /opt/android-ndk-tmp
-# add to PATH
-ENV PATH ${PATH}:${ANDROID_NDK_HOME}  
   
 COPY tools /opt/tools
 COPY licenses /opt/licenses
 
 # Working Directory
 WORKDIR /opt/android-sdk-linux
+RUN /opt/tools/entrypoint.sh built-in
+CMD /opt/tools/entrypoint.sh built-in
