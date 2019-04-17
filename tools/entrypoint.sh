@@ -15,7 +15,7 @@ cd /opt/tools
 chmod u+x *.sh
 if checkbin; then
     
-    exec sudo su-exec android:android /opt/tools/android-sdk-update.sh "$@"
+    sudo exec su-exec android:android /opt/tools/android-sdk-update.sh "$@"
 else
     su_mt_user /opt/tools/android-sdk-update.sh ${1}
 fi
