@@ -50,6 +50,6 @@ COPY licenses /opt/licenses
 
 # Working Directory
 WORKDIR /opt/android-sdk-linux
-RUN cd /opt/tools && chmod -R a+r entrypoint.sh
+RUN cd /opt/tools && chmod u+x *.sh
 RUN /opt/tools/entrypoint.sh built-in
 CMD /opt/tools/entrypoint.sh built-in
