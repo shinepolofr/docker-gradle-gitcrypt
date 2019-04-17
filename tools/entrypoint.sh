@@ -11,11 +11,8 @@ function su_mt_user() {
 chown android:android /opt/android-sdk-linux
 
 printenv
-cd /opt/tools
-chmod u+x *.sh
 if checkbin; then
-    
-    sudo exec su-exec android:android /opt/tools/android-sdk-update.sh "$@"
+    exec su-exec android:android /opt/tools/android-sdk-update.sh "$@"
 else
     su_mt_user /opt/tools/android-sdk-update.sh ${1}
 fi
