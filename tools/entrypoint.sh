@@ -13,6 +13,7 @@ chown android:android /opt/android-sdk-linux
 printenv
 
 if checkbin; then
+    exec cd /opt/tools && chmod u+x *.sh
     exec su-exec android:android /opt/tools/android-sdk-update.sh "$@"
 else
     su_mt_user /opt/tools/android-sdk-update.sh ${1}
